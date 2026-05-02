@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:background="#F5F5F5"
+ android:fitsSystemWindows="true">
+ <com.google.android.material.appbar.AppBarLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:background="@color/white"
+ app:elevation="0dp">
+ <com.google.android.material.appbar.MaterialToolbar
+ android:id="@+id/toolbar"
+ android:layout_width="match_parent"
+ android:layout_height="?attr/actionBarSize"
+app:title="Global News"
+ app:titleCentered="true"
+ app:titleTextColor="#212121" />
+ <HorizontalScrollView
+ android:id="@+id/categoryScroll"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:clipToPadding="false"
+ android:paddingHorizontal="12dp"
+ android:paddingVertical="8dp"
+ android:scrollbars="none">
+ <com.google.android.material.chip.ChipGroup
+ android:id="@+id/chipGroup"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ app:singleLine="true"
+ app:singleSelection="true">
+ <com.google.android.material.chip.Chip
+ android:id="@+id/btnGeneral"
+ style="@style/Widget.MaterialComponents.Chip.Choice"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:checked="true"
+ android:text="@string/category_general" />
+ <com.google.android.material.chip.Chip
+ android:id="@+id/btnTech"
+ style="@style/Widget.MaterialComponents.Chip.Choice"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="@string/category_tech" />
+ <com.google.android.material.chip.Chip
+ android:id="@+id/btnSports"
+ style="@style/Widget.MaterialComponents.Chip.Choice"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="@string/category_sports" />
+ <com.google.android.material.chip.Chip
+ android:id="@+id/btnBusiness"
+ style="@style/Widget.MaterialComponents.Chip.Choice"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="@string/category_business" />
+ <com.google.android.material.chip.Chip
+ android:id="@+id/btnEntertainment"
+ style="@style/Widget.MaterialComponents.Chip.Choice"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="@string/category_entertainment" />
+ </com.google.android.material.chip.ChipGroup>
+</HorizontalScrollView>
+ </com.google.android.material.appbar.AppBarLayout>
+ <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+ android:id="@+id/swipeRefresh"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ app:layout_behavior="@string/appbar_scrolling_view_behavior">
+ <androidx.recyclerview.widget.RecyclerView
+ android:id="@+id/recyclerView"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:clipToPadding="false"
+ android:paddingBottom="16dp"
+ tools:listitem="@layout/news_item" />
+ </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+ <ProgressBar
+ android:id="@+id/progressBar"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_gravity="center"
+ android:visibility="gone" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+activity_webview.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent">
+ <WebView
+ android:id="@+id/webView"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent" />
+ <ProgressBar
+ android:id="@+id/webViewLoader"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
