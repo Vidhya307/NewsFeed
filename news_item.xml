@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:layout_marginHorizontal="12dp"
+ android:layout_marginVertical="8dp"
+ app:cardCornerRadius="16dp"
+ app:cardElevation="6dp"
+ app:strokeWidth="0dp">
+ <androidx.constraintlayout.widget.ConstraintLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content">
+ <ImageView
+ android:id="@+id/newsImage"
+ android:layout_width="0dp"
+ android:layout_height="220dp"
+ android:scaleType="centerCrop"
+ android:background="#EEEEEE"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ tools:srcCompat="@tools:sample/backgrounds/scenic" />
+ <View
+ android:id="@+id/gradientOverlay"
+ android:layout_width="0dp"
+ android:layout_height="80dp"
+ android:background="@drawable/text_gradient"
+ app:layout_constraintBottom_toBottomOf="@id/newsImage"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent" />
+ <TextView
+ android:id="@+id/newsTitle"
+ android:layout_width="0dp"
+ android:layout_height="wrap_content"
+ android:layout_marginHorizontal="16dp"
+ android:layout_marginTop="12dp"
+ android:ellipsize="end"
+ android:maxLines="2"
+ android:textColor="#212121"
+ android:textSize="20sp"
+ android:textStyle="bold"
+ android:fontFamily="sans-serif-medium"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toBottomOf="@id/newsImage"
+ tools:text="Breaking News: Android Development gets easier with AI" />
+ <TextView
+ android:id="@+id/newsDesc"
+ android:layout_width="0dp"
+ android:layout_height="wrap_content"
+ android:layout_marginHorizontal="16dp"
+ android:layout_marginTop="8dp"
+ android:ellipsize="end"
+ android:maxLines="3"
+ android:textColor="#757575"
+ android:textSize="14sp"
+ android:lineSpacingExtra="2dp"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toBottomOf="@id/newsTitle"
+ tools:text="This is a sample description of the news article that 
+provides more details about the event." />
+ <TextView
+ android:id="@+id/newsSource"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_marginStart="16dp"
+ android:layout_marginTop="16dp"
+ android:layout_marginBottom="16dp"
+ android:background="@drawable/source_badge_bg"
+ android:paddingHorizontal="10dp"
+ android:paddingVertical="4dp"
+ android:textColor="@color/white"
+ android:textSize="12sp"
+ android:textStyle="bold"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toBottomOf="@id/newsDesc"
+ tools:text="TechCrunch" />
+ <TextView
+ android:id="@+id/newsDate"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_marginEnd="16dp"
+ android:textColor="#9E9E9E"
+ android:textSize="12sp"
+ app:layout_constraintBottom_toBottomOf="@id/newsSource"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintTop_toTopOf="@id/newsSource"
+ tools:text="2 hours ago" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
